@@ -8,13 +8,13 @@ import java.util.ArrayList;
 
 public class Arquivo {
 	
-	public void escrever(String fileName, boolean append) {
+	public void escrever(String tipo, boolean append) {
 		
 		try {
-			FileWriter fw = new FileWriter(fileName + ".html", append);
+			FileWriter fw = new FileWriter("index.html", append);
 			BufferedWriter bw = new BufferedWriter(fw);
 			
-			bw.write(fileName + "\r\n");
+			bw.write(tipo + "\r\n");
 			
 			bw.close();
 			fw.close();
@@ -24,11 +24,11 @@ public class Arquivo {
 		
 	}
 	
-	public ArrayList<String> ler (String fileName) {
+	public ArrayList<String> ler (String index) {
 		ArrayList<String> data = new ArrayList<>();
 		
 		try {
-			FileReader fr = new FileReader(fileName + ".html");
+			FileReader fr = new FileReader(index + ".html");
 			BufferedReader br = new BufferedReader(fr);
 			
 			String linha = "";
